@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Final project for sprint 2
+title: Lesson hacks and homework
 permalink: /sprint2/
 ---
 
