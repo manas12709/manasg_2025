@@ -16,16 +16,18 @@ hide: false
         padding: 0;
         text-align: center;
         overflow: hidden; /* Prevents scrollbars */
-        background: linear-gradient(135deg, #74ebd5, #acb6e5);
+        background: linear-gradient(135deg, #ff6e7f, #bfe9ff, #ff512f, #dd2476); /* Gradient with warm reds and sunset oranges */
         animation: gradient 15s ease infinite; /* Animate the background */
     }
 
     @keyframes gradient {
-        0% { background: #74ebd5; }
-        50% { background: #acb6e5; }
-        100% { background: #74ebd5; }
+        0% { background: #ff6e7f; } /* Starting color */
+        25% { background: #ff512f; } /* Second color */
+        50% { background: #dd2476; } /* Third color */
+        75% { background: #bfe9ff; } /* Fourth color */
+        100% { background: #ff6e7f; } /* Ending color */
     }
-
+    
     h1 {
         font-size: 3em;
         color: #ffffff;
