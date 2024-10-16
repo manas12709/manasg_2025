@@ -138,46 +138,139 @@ permalink: /accomplishments/
     }
 </style>
 
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #00c6ff, #0072ff, #00bfff, #1e90ff); /* Gradient for ocean colors */
+        color: #333;
+        text-align: center;
+        animation: backgroundAnimation 20s ease infinite;
+    }
+
+    @keyframes backgroundAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    h1, h2 {
+        font-weight: 700;
+        animation: fadeInDown 1.5s ease-out;
+    }
+
+    h1 {
+        font-size: 3em;
+        color: #005f73;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+    }
+
+    h2 {
+        font-size: 2.2em;
+        color: #ff8c00;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+        animation: slideInLeft 1.5s ease;
+    }
+
+    p {
+        font-size: 1.5em;
+        max-width: 800px;
+        margin: 20px auto;
+        line-height: 1.6;
+        animation: fadeIn 2s ease;
+        color: #2d3436;
+    }
+
+    .emoji {
+        font-size: 2em;
+    }
+
+    .highlight {
+        color: #ff6347;
+        font-weight: bold;
+    }
+
+    ul {
+        font-size: 1.3em;
+        text-align: left;
+        max-width: 600px;
+        margin: 20px auto;
+        padding-left: 20px;
+        animation: fadeIn 2.5s ease-in;
+    }
+
+    li {
+        margin-bottom: 12px;
+        animation: fadeInUp 1.5s ease;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 8px;
+    }
+
+    /* Advanced animations */
+    @keyframes fadeInDown {
+        0% { opacity: 0; transform: translateY(-40px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+        0% { opacity: 0; transform: translateX(-100px); }
+        100% { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(40px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
 <h1>My Journey So Far</h1>
-<p><em>Key Takeaways from CSP so far and future preparations for this class</em></p>
-<p><strong>Oct 15, 2024 • 2 min read</strong></p>
+<p><em>Key Takeaways from CSP and Future Preparations for Success</em></p>
+<p><strong>October 15, 2024 • 2 min read</strong></p>
 
 <h2><span class="emoji">🚀</span> My Coding Achievements</h2>
 <ul>
-    <li><span class="highlight">About:</span> My first checkpoint that introduced me to basic formatting using Markdown and HTML.</li>
-    <li><span class="highlight">GitHub Playground:</span> Helped me understand Python and JavaScript through trial and error.</li>
-    <li><span class="highlight">Frontend Development:</span> Built upon previous learnings, allowing me to experiment with hacks for real-world applications.</li>
-    <li><span class="highlight">Self-Teaching Lesson:</span> Summarized my knowledge in a teaching format, revealing both strengths and areas for improvement in my code.</li>
+    <li><span class="highlight">Introduction to Coding:</span> My first coding checkpoint, where I learned the basics of markdown and HTML formatting.</li>
+    <li><span class="highlight">GitHub Playground:</span> A deeper dive into Python and JavaScript, offering me the chance to experiment and learn more dynamically.</li>
+    <li><span class="highlight">Frontend Mastery:</span> Building on earlier knowledge, I discovered new techniques to create practical, real-world applications through experimentation.</li>
+    <li><span class="highlight">Self-Teaching Lesson:</span> A capstone where I consolidated all my learning, which revealed key strengths and areas needing improvement in my approach.</li>
 </ul>
 
 <h2>Major Checkpoints in CSP</h2>
 <ul>
-    <li><span class="highlight">Running the Webpage:</span> Using resources from Mr. Mort, we set up a foundational webpage for all class projects.</li>
-    <li><span class="highlight">About Page:</span> Introduced us to tools like GitHub and VSCode, which became essential for our projects.</li>
-    <li><span class="highlight">First Issue Created:</span> Marked an important milestone in peer collaboration and self-expression through GitHub issues.</li>
-    <li><span class="highlight">First Pull Request:</span> Our group’s first pull request taught us how even a small formatting error can impact the whole codebase.</li>
+    <li><span class="highlight">Launching the Website:</span> By using the instructions provided by Mr. Mort, we successfully built a website, which now serves as the cornerstone for all class projects.</li>
+    <li><span class="highlight">About Page Creation:</span> A milestone that introduced essential tools such as GitHub and VSCode, laying the groundwork for our future development work.</li>
+    <li><span class="highlight">First Issue Created:</span> An important experience that taught us how to express our ideas and work collaboratively with peers via GitHub's issue tracking system.</li>
+    <li><span class="highlight">First Pull Request:</span> Our group's first pull request made us realize the significance of precision in formatting and how minor errors can impact the entire project.</li>
 </ul>
 
-<h2><span class="emoji">🛠️</span> Skills I've Learned</h2>
+<h2><span class="emoji">🛠️</span> Skills I’ve Acquired</h2>
 <ul>
     <li><strong>Languages:</strong> Python, JavaScript, HTML, CSS</li>
-    <li><strong>Tools:</strong> GitHub, VSCode, etc.</li>
+    <li><strong>Tools:</strong> GitHub, VSCode, among others</li>
 </ul>
 
 <h2><span class="emoji">🌱</span> Continuous Learning</h2>
 <ul>
-    <li><strong>Currently learning:</strong> JavaScript cells and lessons from the Team Teach Assignment.</li>
-    <li><strong>Recently completed:</strong> Corrections for all assignments and summaries of lessons integrated into the main page.</li>
+    <li><strong>Currently Studying:</strong> JavaScript cells and additional lessons from our Team Teach assignment.</li>
+    <li><strong>Recently Completed:</strong> Revisions for all assignments and compilation of lesson summaries onto the main webpage.</li>
 </ul>
 
-<h2>College Board Coverage</h2>
+<h2>College Board Topics</h2>
 <ul>
-    <li><strong>Computational Thinking:</strong> Debugging in VSCode, SCSS styling, HTML formatting, and more.</li>
-    <li><strong>Data and Information:</strong> Data representation and analysis, markdown cells, commit graphs using GitLens.</li>
-    <li><strong>Algorithms:</strong> Writing and understanding control structures (loops, conditionals) and analyzing efficiency (linear vs. binary search).</li>
-    <li><strong>Programming:</strong> Basics like functions, variables, debugging, and syntax structure in multiple languages.</li>
-    <li><strong>The Internet:</strong> Web development basics using HTML and CSS (cybersecurity is yet to be covered).</li>
-    <li><strong>Global Impact:</strong> Exploring the ethical and social impacts of computing technologies, privacy issues, and economic influences.</li>
-    <li><strong>Creative Development:</strong> Using technology to create, innovate, and learn through trial and error.</li>
-    <li><strong>Exploration of Computing Innovations:</strong> Analyzing how computing innovations affect society through research methods and critical evaluation.</li>
+    <li><strong>Computational Thinking:</strong> Problem-solving strategies, like debugging with VSCode and analyzing algorithms through SCSS and HTML styling.</li>
+    <li><strong>Data & Information:</strong> Data representation in binary, text, and images through markdown cells, strings, and HTML image formats. Also, commit graph analysis in GitLens.</li>
+    <li><strong>Algorithms:</strong> Gained a solid understanding of algorithm design, control structures (loops, conditionals), and efficiency analysis (linear vs. binary search).</li>
+    <li><strong>Programming:</strong> Mastered basic programming concepts like syntax, semantics, data types, and debugging techniques using VSCode’s debugging tools.</li>
+    <li><strong>The Internet:</strong> Covered fundamental web development (HTML, CSS). Upcoming topics include internet protocols and cybersecurity principles.</li>
+    <li><strong>Global Impact:</strong> Understanding computing's social and ethical impacts, privacy concerns, and the broader implications on society.</li>
+    <li><strong>Creative Development:</strong> Leveraging technology to design and develop creative applications, highlighting the importance of innovation in computer science.</li>
+    <li><strong>Exploring Computing Innovations:</strong> Conducted research into computing innovations to analyze their influence on society and technology development.</li>
 </ul>
