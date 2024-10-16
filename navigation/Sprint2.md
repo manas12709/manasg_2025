@@ -28,8 +28,27 @@ permalink: /sprint2/
                     75% { background: #1e90ff; } /* Fourth color */
                     100% { background: #00c6ff; } /* Ending color */
                 }
+
+                /* Submenu styling */
+                .submenu {
+                    color: black; /* Set text color to black */
+                    background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a background to increase contrast */
+                    padding: 10px; /* Optional: Add padding */
+                    border-radius: 5px; /* Optional: Round the corners */
+                    display: none; /* Hide the submenu initially */
+                }
+
+                .submenu a {
+                    color: black; /* Ensure links in submenu are also black */
+                    text-decoration: none; /* Optional: Remove underline from links */
+                }
+
+                .submenu a:hover {
+                    text-decoration: underline; /* Optional: Underline on hover */
+                }
             </style>
         </code>
     </pre>
 </details>
+
 
