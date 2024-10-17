@@ -211,10 +211,10 @@ permalink: /summary/
             <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-10">3.10 Lists</a></td>
             <td>
                 <ul>
-                    <li>Libraries are collections of pre-written code for common tasks.</li>
-                    <li>Importing libraries allows developers to use external code.</li>
-                    <li>Common libraries include math, random, and datetime.</li>
-                    <li>Libraries reduce the need to write repetitive code.</li>
+                    <li>Assigning Values: Assign values to list elements.</li>
+                    <li>Inserting Elements: Insert elements at specific positions in the list.</li>
+                    <li>Appending Elements: Append new elements to the end of the list.</li>
+                    <li>Removing Elements: Remove elements from the list.</li>
                 </ul>
             </td>
         </tr>
