@@ -104,6 +104,7 @@ permalink: /summary/
         </ul>
     </details>
 
+<div class="submenu">
     <details>
         <summary><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-2/" style="color: black;">3.2 Data Abstraction</a></summary>
         <ul>
@@ -113,6 +114,7 @@ permalink: /summary/
         </ul>
     </details>
 
+<div class="submenu">
     <details>
         <summary><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-3" style="color: black;">3.3 Mathematical Expressions</a></summary>
         <ul>
@@ -122,6 +124,7 @@ permalink: /summary/
         </ul>
     </details>
 
+<div class="submenu">
     <details>
         <summary><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-4" style="color: black;">3.4 Strings</a></summary>
         <ul>
@@ -131,6 +134,7 @@ permalink: /summary/
         </ul>
     </details>
 
+<div class="submenu">
     <details>
         <summary><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-5" style="color: black;">3.5 Booleans</a></summary>
         <ul>
@@ -140,6 +144,7 @@ permalink: /summary/
         </ul>
     </details>
 
+<div class="submenu">
     <details>
         <summary><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-6" style="color: black;">3.6 Conditionals</a></summary>
         <ul>
@@ -149,6 +154,7 @@ permalink: /summary/
         </ul>
     </details>
 
+<div class="submenu">
     <details>
         <summary><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-7" style="color: black;">3.7 Nested Conditionals</a></summary>
         <ul>
@@ -158,6 +164,7 @@ permalink: /summary/
         </ul>
     </details>
 
+<div class="submenu">
     <details>
         <summary><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-8" style="color: black;">3.8 Iteration</a></summary>
         <ul>
@@ -167,6 +174,7 @@ permalink: /summary/
         </ul>
     </details>
 
+<div class="submenu">
     <details>
         <summary><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-10" style="color: black;">3.10 Lists</a></summary>
         <ul>
@@ -176,6 +184,3 @@ permalink: /summary/
         </ul>
     </details>
 </div>
-
-
-
