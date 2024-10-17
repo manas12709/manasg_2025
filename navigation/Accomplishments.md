@@ -101,6 +101,13 @@ permalink: /accomplishments/
 <p><em>Key Takeaways from CSP and Future Preparations for Success</em></p>
 <p><strong>October 15, 2024 • 2 min read</strong></p>
 
+<h2>My Biggest Projects So Far</h2>
+<ul>
+    <li><a href="https://manas12709.github.io/manasg_2025/pokergame/" target="_blank">My Poker Game</a></li>
+    <li><a href="https://manas12709.github.io/manasg_2025/about/" target="_blank">My Chatbot on My About Page</a></li>
+    <li><a href="https://manas12709.github.io/manasg_2025/WPM/" target="_blank">My WPM Game</a></li>
+</ul>
+
 <h2><span class="emoji">🚀</span> My Coding Achievements</h2>
 <ul>
     <li><span class="highlight">Introduction to Coding:</span> My first coding checkpoint, where I learned the basics of markdown and HTML formatting.</li>
