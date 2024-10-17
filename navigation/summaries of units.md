@@ -218,3 +218,11 @@ permalink: /summary/
                 </ul>
             </td>
         </tr>
+
+    <script src="https://utteranc.es/client.js"
+        repo="manas12709/manas_2025"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
