@@ -69,6 +69,7 @@ permalink: /summary/
         color: #007bff;
         cursor: pointer;
         transform: translateX(5px);
+        transition: transform 0.2s ease;
     }
 
     td a {
