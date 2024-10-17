@@ -29,55 +29,78 @@ permalink: /summary/
         width: 90%;
         margin: 30px auto;
         border-collapse: collapse;
-        background-color: #ffffff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
+        background-color: #f9f9f9;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
         overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    table:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     }
 
     th, td {
-        padding: 15px;
-        border: 1px solid #ddd;
+        padding: 20px;
+        border-bottom: 1px solid #e0e0e0;
         text-align: left;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     th {
-        background-color: #0047ab;
+        background-color: #007bff;
         color: white;
         font-weight: bold;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
     }
 
     td {
-        background-color: #f2f2f2;
+        background-color: #f5f7fa;
+        color: #333;
     }
 
     td:hover {
-        background-color: #e6f7ff;
+        background-color: #e9f5ff;
+        color: #007bff;
     }
 
     td a {
-        color: #0047ab;
+        color: #007bff;
         text-decoration: none;
         font-weight: bold;
+        transition: color 0.3s ease;
     }
 
     td a:hover {
-        text-decoration: underline;
+        color: #0056b3;
     }
 
     h2 {
-        font-size: 2em;
-        color: #333;
+        font-size: 2.5rem;
+        color: #0047ab;
         margin-top: 20px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        text-transform: uppercase;
     }
 
     ul {
         list-style-type: disc;
         margin-left: 20px;
+        line-height: 1.6;
     }
 
     li {
-        margin-bottom: 5px;
+        margin-bottom: 8px;
+        font-size: 1.05rem;
+        transition: color 0.3s ease;
+    }
+
+    li:hover {
+        color: #007bff;
     }
 </style>
 
