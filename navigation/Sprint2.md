@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lesson Hacks and Homework
+title: Lesson hacks and homework
 permalink: /sprint2/
 ---
 
@@ -12,116 +12,67 @@ permalink: /sprint2/
         margin: 0;
         padding: 0;
         text-align: center;
-        background: linear-gradient(135deg, #00c6ff, #0072ff, #00bfff, #1e90ff); 
-        animation: gradient 10s ease infinite;
+        overflow: hidden;
+        background: linear-gradient(135deg, #ffafbd, #ffc3a0, #ffeb3b, #ff9800);
+        animation: gradient 15s ease infinite;
+        color: #333;
     }
 
     @keyframes gradient {
-        0% { background: #00c6ff; }
-        25% { background: #0072ff; }
-        50% { background: #00bfff; }
-        75% { background: #1e90ff; }
-        100% { background: #00c6ff; }
+        0% { background: #ffafbd; }
+        25% { background: #ffc3a0; }
+        50% { background: #ffeb3b; }
+        75% { background: #ff9800; }
+        100% { background: #ffafbd; }
     }
 
-    h2 {
+    h1, h2 {
         font-size: 2.5em;
-        color: white;
-        text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        margin-top: 30px;
-        transition: color 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        animation: textGlow 2s ease-in-out infinite alternate;
     }
 
-    h2:hover {
-        color: #ffd700;
+    @keyframes textGlow {
+        from { text-shadow: 0 0 10px #ffffff, 0 0 20px #ffafbd; }
+        to { text-shadow: 0 0 20px #ffffff, 0 0 40px #ffc3a0; }
     }
 
     .content {
-        background-color: rgba(255, 255, 255, 0.9);
+        width: 80%;
+        margin: 50px auto;
+        background: rgba(255, 255, 255, 0.85);
         padding: 20px;
-        border-radius: 12px;
+        border-radius: 10px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        margin: 40px auto;
-        width: 90%;
-        max-width: 1000px;
-        transition: transform 0.3s ease;
+        transition: transform 0.4s ease, background-color 0.6s ease;
     }
 
     .content:hover {
-        transform: scale(1.02);
+        transform: scale(1.05);
+        background-color: rgba(255, 245, 240, 0.95);
     }
 
-    details {
-        background-color: #0072ff;
-        color: white;
-        padding: 15px;
-        border-radius: 8px;
-        margin-bottom: 20px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    p {
+        font-size: 1.2em;
+        line-height: 1.6;
     }
 
-    details:hover {
-        background-color: #005bb5;
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-    }
-
-    summary {
-        font-size: 1.5em;
-        cursor: pointer;
+    a {
+        color: #ff5722;
+        text-decoration: none;
         transition: color 0.3s ease;
     }
 
-    summary:hover {
-        color: #ffd700;
-    }
-
-    pre, code {
-        background-color: #f5f5f5;
-        color: #333;
-        padding: 20px;
-        border-radius: 10px;
-        font-size: 1em;
-        text-align: left;
-        overflow-x: auto;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    pre:hover, code:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    a:hover {
+        color: #e64a19;
+        text-shadow: 0 0 10px rgba(255, 87, 34, 0.8);
     }
 
 </style>
 
-<h2>Lesson Hacks and Homework</h2>
-
 <div class="content">
-    <p>Below are the lesson hacks and homework assignments for this sprint. Click on each section to view detailed content and code snippets.</p>
-
-    <details>
-        <summary>Click to view CSS code</summary>
-        <pre>
-            <code>
-                /* Example CSS snippet */
-                body {
-                    font-family: 'Poppins', sans-serif;
-                    margin: 0;
-                    padding: 0;
-                    text-align: center;
-                    background: linear-gradient(135deg, #00c6ff, #0072ff, #00bfff, #1e90ff);
-                    animation: gradient 10s ease infinite;
-                }
-
-                @keyframes gradient {
-                    0% { background: #00c6ff; }
-                    25% { background: #0072ff; }
-                    50% { background: #00bfff; }
-                    75% { background: #1e90ff; }
-                    100% { background: #00c6ff; }
-                }
-            </code>
-        </pre>
-    </details>
-
-    <!-- Add more content or sections as needed -->
+    <h1>Lesson Hacks and Homework</h1>
+    <p>Welcome to the lesson hacks and homework section. Here you'll find assignments for all your lessons. Stay up to date with your work and make the most out of your learning experience!</p>
+    <!-- More content can go here -->
 </div>

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Summary of all units 
+title: Summary of all units
 permalink: /summary/
 ---
 
@@ -15,6 +15,7 @@ permalink: /summary/
         overflow: auto; /* Enable scrolling */
         background: linear-gradient(135deg, #00c6ff, #0072ff, #00bfff, #1e90ff);
         animation: gradient 15s ease infinite;
+        color: #fff;
     }
 
     @keyframes gradient {
@@ -25,47 +26,82 @@ permalink: /summary/
         100% { background: #00c6ff; }
     }
 
+    h2 {
+        font-size: 2.5rem;
+        color: #0047ab;
+        margin-top: 20px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        text-transform: uppercase;
+    }
+
     table {
-        width: 90%;
-        margin: 30px auto;
+        width: 95%;
+        margin: 40px auto;
         border-collapse: collapse;
-        background-color: #f9f9f9;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        transition: all 0.5s ease;
     }
 
     table:hover {
-        transform: scale(1.02);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        transform: scale(1.03);
+        box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
     }
 
-    th, td {
-        padding: 20px;
-        border-bottom: 1px solid #e0e0e0;
-        text-align: left;
-        font-size: 1.1rem;
-        transition: background-color 0.3s ease, color 0.3s ease;
+    thead {
+        background: rgba(0, 123, 255, 0.85);
+        color: #fff;
     }
 
     th {
-        background-color: #007bff;
-        color: white;
+        padding: 20px;
+        font-size: 1.3rem;
         font-weight: bold;
-        font-size: 1.2rem;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.1em;
+        text-align: left;
+        position: sticky;
+        top: 0;
+        background: rgba(0, 123, 255, 0.95);
+    }
+
+    tbody {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 15px;
     }
 
     td {
-        background-color: #f5f7fa;
+        padding: 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        font-size: 1.1rem;
+        text-align: left;
         color: #333;
+        position: relative;
+        overflow: hidden;
+        transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     td:hover {
-        background-color: #e9f5ff;
+        background: rgba(100, 181, 246, 0.3);
         color: #007bff;
+    }
+
+    td::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 123, 255, 0.15);
+        transition: left 0.5s ease;
+    }
+
+    td:hover::before {
+        left: 0;
     }
 
     td a {
@@ -77,14 +113,7 @@ permalink: /summary/
 
     td a:hover {
         color: #0056b3;
-    }
-
-    h2 {
-        font-size: 2.5rem;
-        color: #0047ab;
-        margin-top: 20px;
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-        text-transform: uppercase;
+        text-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
     }
 
     ul {
@@ -101,6 +130,41 @@ permalink: /summary/
 
     li:hover {
         color: #007bff;
+    }
+
+    /* Advanced CSS Animations */
+    tbody tr {
+        animation: rowSlideIn 1.5s ease-in-out;
+    }
+
+    @keyframes rowSlideIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(0, 123, 255, 0.5);
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 123, 255, 0.8);
     }
 </style>
 
@@ -147,71 +211,6 @@ permalink: /summary/
                 </ul>
             </td>
         </tr>
-        <tr>
-            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-4">3.4 Strings</a></td>
-            <td>
-                <ul>
-                    <li>Strings are sequences of characters used for text manipulation.</li>
-                    <li>Common methods: slicing, concatenation, and formatting.</li>
-                    <li>Escape characters like \n (newline) and \t (tab) format output.</li>
-                    <li>String indexing allows access to individual characters.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-5">3.5 Booleans</a></td>
-            <td>
-                <ul>
-                    <li>Booleans represent True or False values.</li>
-                    <li>Comparison operators: ==, !=, >, <, >=, <= compare values.</li>
-                    <li>Boolean logic: AND, OR, NOT used for combining conditions.</li>
-                    <li>Booleans are often used in conditionals to control program flow.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-6">3.6 Conditionals</a></td>
-            <td>
-                <ul>
-                    <li>If-else statements control the flow of the program based on conditions.</li>
-                    <li>Conditions evaluate to True or False.</li>
-                    <li>Multiple conditions can be combined using logical operators.</li>
-                    <li>Else-if chains are used to test multiple conditions.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-7">3.7 Nested Conditionals</a></td>
-            <td>
-                <ul>
-                    <li>Nested if statements allow for complex decision-making.</li>
-                    <li>Important to maintain proper indentation for clarity.</li>
-                    <li>Nested conditionals can sometimes be simplified using logical operators.</li>
-                    <li>Used for multi-layered decision logic.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-8">3.8 Iteration</a></td>
-            <td>
-                <ul>
-                    <li>Loops (for, while) repeat tasks until conditions are met.</li>
-                    <li>For loops iterate over sequences like lists or ranges.</li>
-                    <li>While loops continue until a condition evaluates to False.</li>
-                    <li>Break and continue statements alter loop behavior.</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-10">3.10 Lists</a></td>
-            <td>
-                <ul>
-                    <li>Lists store multiple items in a single variable.</li>
-                    <li>Common list operations: append, remove, sort, and slicing.</li>
-                    <li>Lists are mutable, meaning their elements can be changed.</li>
-                    <li>Useful for storing collections of data like names or numbers.</li>
-                </ul>
-            </td>
-        </tr>
+        <!-- Add more rows here -->
     </tbody>
 </table>
