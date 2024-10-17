@@ -187,14 +187,16 @@ permalink: /accomplishments/
 </details>
 
 <style>
-    body {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(135deg, #89f7fe, #66a6ff); /* Cool ocean blue gradient */
-        color: #333;
-        text-align: center;
-    }
+   body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #00c6ff, #0072ff, #00bfff, #1e90ff); /* Gradient for ocean colors */
+    color: #333;
+    text-align: center;
+    animation: backgroundAnimation 20s ease infinite;
+    overflow: auto; /* Allows scrolling */
+}
 
     h1 {
         font-size: 3em;
