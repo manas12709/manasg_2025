@@ -7,6 +7,7 @@ permalink: /summary/
 {% include nav/summary.html %}
 
 <style>
+    /* Body and Background Gradient Animation */
     body {
         font-family: 'Poppins', sans-serif;
         margin: 0;
@@ -30,35 +31,38 @@ permalink: /summary/
         font-size: 2.5rem;
         color: #0047ab;
         margin-top: 20px;
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
         text-transform: uppercase;
+        letter-spacing: 0.1em;
     }
 
+    /* Table Styling with Advanced Effects */
     table {
         width: 95%;
         margin: 40px auto;
         border-collapse: collapse;
-        background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+        background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
         border-radius: 15px;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         overflow: hidden;
         position: relative;
-        transition: all 0.5s ease;
+        transition: all 0.7s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     table:hover {
-        transform: scale(1.03);
-        box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
+        transform: scale(1.05);
+        box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
     }
 
     thead {
-        background: rgba(0, 123, 255, 0.85);
+        background: rgba(0, 123, 255, 0.9);
         color: #fff;
     }
 
     th {
         padding: 20px;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -73,6 +77,7 @@ permalink: /summary/
         border-radius: 15px;
     }
 
+    /* Table Cells with Animations */
     td {
         padding: 20px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -82,11 +87,14 @@ permalink: /summary/
         position: relative;
         overflow: hidden;
         transition: background-color 0.4s ease, color 0.4s ease;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
     }
 
     td:hover {
         background: rgba(100, 181, 246, 0.3);
         color: #007bff;
+        cursor: pointer;
     }
 
     td::before {
@@ -116,23 +124,7 @@ permalink: /summary/
         text-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
     }
 
-    ul {
-        list-style-type: disc;
-        margin-left: 20px;
-        line-height: 1.6;
-    }
-
-    li {
-        margin-bottom: 8px;
-        font-size: 1.05rem;
-        transition: color 0.3s ease;
-    }
-
-    li:hover {
-        color: #007bff;
-    }
-
-    /* Advanced CSS Animations */
+    /* Responsive Hover Effect on Rows */
     tbody tr {
         animation: rowSlideIn 1.5s ease-in-out;
     }
@@ -148,7 +140,24 @@ permalink: /summary/
         }
     }
 
-    /* Custom Scrollbar */
+    /* Bullet Point List Style */
+    ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        line-height: 1.8;
+    }
+
+    li {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+    }
+
+    li:hover {
+        color: #007bff;
+    }
+
+    /* Custom Scrollbar Styling */
     ::-webkit-scrollbar {
         width: 12px;
     }
@@ -170,6 +179,7 @@ permalink: /summary/
 
 <h2>Part 1 - Fundamentals (Quick Review)</h2>
 
+<!-- Full Table with all Units Included -->
 <table>
     <thead>
         <tr>
@@ -211,6 +221,49 @@ permalink: /summary/
                 </ul>
             </td>
         </tr>
-        <!-- Add more rows here -->
+        <tr>
+            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-4">3.4 Strings</a></td>
+            <td>
+                <ul>
+                    <li>Strings are sequences of characters used for text manipulation.</li>
+                    <li>Common methods: slicing, concatenation, and formatting.</li>
+                    <li>Escape characters like \n (newline) and \t (tab) format output.</li>
+                    <li>String indexing allows access to individual characters.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-5">3.5 Booleans</a></td>
+            <td>
+                <ul>
+                    <li>Booleans represent True or False values.</li>
+                    <li>Comparison operators: ==, !=, >, <, >=, <= compare values.</li>
+                    <li>Boolean logic: AND, OR, NOT used for combining conditions.</li>
+                    <li>Booleans are often used in conditionals to control program flow.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-6">3.6 Conditionals</a></td>
+            <td>
+                <ul>
+                    <li>Conditionals control the flow of a program based on Boolean values.</li>
+                    <li>If, elif, and else statements execute code based on conditions.</li>
+                    <li>Nested conditionals check multiple conditions within another.</li>
+                    <li>Ternary operators provide shorthand for simple conditionals.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-7">3.7 Lists</a></td>
+            <td>
+                <ul>
+                    <li>Lists store multiple items in a single variable.</li>
+                    <li>Methods like append(), remove(), and pop() modify lists.</li>
+                    <li>Lists are indexed starting at 0, allowing access to elements by position.</li>
+                    <li>List slicing extracts parts of a list (e.g., list[1:3]).</li>
+                </ul>
+            </td>
+        </tr>
     </tbody>
 </table>
