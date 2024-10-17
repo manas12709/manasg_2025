@@ -7,16 +7,14 @@ permalink: /summary/
 {% include nav/summary.html %}
 
 <style>
-    /* Body and Background Gradient Animation */
     body {
         font-family: 'Poppins', sans-serif;
         margin: 0;
         padding: 0;
         text-align: center;
-        overflow: auto; /* Enable scrolling */
+        overflow: auto;
         background: linear-gradient(135deg, #00c6ff, #0072ff, #00bfff, #1e90ff);
         animation: gradient 15s ease infinite;
-        color: #fff;
     }
 
     @keyframes gradient {
@@ -27,89 +25,50 @@ permalink: /summary/
         100% { background: #00c6ff; }
     }
 
-    h2 {
-        font-size: 2.5rem;
-        color: #0047ab;
-        margin-top: 20px;
-        text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-    }
-
-    /* Table Styling with Advanced Effects */
     table {
-        width: 95%;
-        margin: 40px auto;
+        width: 90%;
+        margin: 30px auto;
         border-collapse: collapse;
-        background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         border-radius: 15px;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        overflow: hidden;
-        position: relative;
-        transition: all 0.7s ease;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: transform 0.5s ease, box-shadow 0.5s ease, background 0.3s ease;
     }
 
     table:hover {
         transform: scale(1.05);
-        box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        background: rgba(255, 255, 255, 0.95);
     }
 
-    thead {
-        background: rgba(0, 123, 255, 0.9);
-        color: #fff;
+    th, td {
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     th {
-        padding: 20px;
-        font-size: 1.4rem;
+        background: linear-gradient(135deg, #007bff, #1e90ff);
+        color: white;
         font-weight: bold;
+        font-size: 1.3rem;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
-        text-align: left;
-        position: sticky;
-        top: 0;
-        background: rgba(0, 123, 255, 0.95);
+        letter-spacing: 0.05em;
+        border-bottom: 2px solid white;
     }
 
-    tbody {
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 15px;
-    }
-
-    /* Table Cells with Animations */
     td {
-        padding: 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        font-size: 1.1rem;
-        text-align: left;
+        background-color: #f5f7fa;
         color: #333;
-        position: relative;
-        overflow: hidden;
-        transition: background-color 0.4s ease, color 0.4s ease;
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
     }
 
     td:hover {
-        background: rgba(100, 181, 246, 0.3);
+        background-color: #e1f5ff;
         color: #007bff;
         cursor: pointer;
-    }
-
-    td::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 123, 255, 0.15);
-        transition: left 0.5s ease;
-    }
-
-    td:hover::before {
-        left: 0;
+        transform: translateX(5px);
     }
 
     td a {
@@ -121,65 +80,36 @@ permalink: /summary/
 
     td a:hover {
         color: #0056b3;
-        text-shadow: 0 0 10px rgba(0, 123, 255, 0.8);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     }
 
-    /* Responsive Hover Effect on Rows */
-    tbody tr {
-        animation: rowSlideIn 1.5s ease-in-out;
+    h2 {
+        font-size: 2.5rem;
+        color: #0047ab;
+        margin-top: 20px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        text-transform: uppercase;
     }
 
-    @keyframes rowSlideIn {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Bullet Point List Style */
     ul {
         list-style-type: disc;
         margin-left: 20px;
-        line-height: 1.8;
+        line-height: 1.6;
     }
 
     li {
-        margin-bottom: 10px;
-        font-size: 1.1rem;
+        margin-bottom: 8px;
+        font-size: 1.05rem;
         transition: color 0.3s ease;
     }
 
     li:hover {
         color: #007bff;
     }
-
-    /* Custom Scrollbar Styling */
-    ::-webkit-scrollbar {
-        width: 12px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: rgba(0, 123, 255, 0.5);
-        border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-        background: rgba(0, 123, 255, 0.8);
-    }
 </style>
 
 <h2>Part 1 - Fundamentals (Quick Review)</h2>
 
-<!-- Full Table with all Units Included -->
 <table>
     <thead>
         <tr>
@@ -200,7 +130,7 @@ permalink: /summary/
             </td>
         </tr>
         <tr>
-            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-2">3.2 Data Abstraction</a></td>
+            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-2/">3.2 Data Abstraction</a></td>
             <td>
                 <ul>
                     <li>Data abstraction simplifies code by hiding complex details.</li>
@@ -247,23 +177,43 @@ permalink: /summary/
             <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-6">3.6 Conditionals</a></td>
             <td>
                 <ul>
-                    <li>Conditionals control the flow of a program based on Boolean values.</li>
-                    <li>If, elif, and else statements execute code based on conditions.</li>
-                    <li>Nested conditionals check multiple conditions within another.</li>
-                    <li>Ternary operators provide shorthand for simple conditionals.</li>
+                    <li>If-else statements control the flow of the program based on conditions.</li>
+                    <li>Conditions evaluate to True or False.</li>
+                    <li>Multiple conditions can be combined using logical operators.</li>
+                    <li>Else-if chains are used to test multiple conditions.</li>
                 </ul>
             </td>
         </tr>
         <tr>
-            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-7">3.7 Lists</a></td>
+            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-7">3.7 Nested Conditionals</a></td>
             <td>
                 <ul>
-                    <li>Lists store multiple items in a single variable.</li>
-                    <li>Methods like append(), remove(), and pop() modify lists.</li>
-                    <li>Lists are indexed starting at 0, allowing access to elements by position.</li>
-                    <li>List slicing extracts parts of a list (e.g., list[1:3]).</li>
+                    <li>Nested if statements allow for complex decision-making.</li>
+                    <li>Important to maintain proper indentation for clarity.</li>
+                    <li>Nested conditionals can sometimes be simplified using logical operators.</li>
+                    <li>Used for multi-layered decision logic.</li>
                 </ul>
             </td>
         </tr>
-    </tbody>
-</table>
+        <tr>
+            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-8">3.8 Iteration</a></td>
+            <td>
+                <ul>
+                    <li>Loops (for, while) repeat tasks until conditions are met.</li>
+                    <li>For loops iterate over sequences like lists or ranges.</li>
+                    <li>While loops continue until a condition evaluates to False.</li>
+                    <li>Break and continue statements alter loop behavior.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://nighthawkcoders.github.io/portfolio_2025/csp/big-idea/p2/3-10">3.10 Lists</a></td>
+            <td>
+                <ul>
+                    <li>Libraries are collections of pre-written code for common tasks.</li>
+                    <li>Importing libraries allows developers to use external code.</li>
+                    <li>Common libraries include math, random, and datetime.</li>
+                    <li>Libraries reduce the need to write repetitive code.</li>
+                </ul>
+            </td>
+        </tr>
