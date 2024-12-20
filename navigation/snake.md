@@ -7,44 +7,30 @@ permalink: /snake/
 {% include nav/home.html %}
 
 <style>
-    body.light-theme {
-        background-color: white;
-        color: black;
-    }
-
-    body.dark-theme {
-        background-color: #333;
+    /* Christmas Theme */
+    body {
+        background: url('https://www.transparenttextures.com/patterns/christmas.png') #003366;
         color: white;
-    }
-
-    body.blue-theme {
-        background-color: #007acc;
-        color: white;
-    }
-
-    body.red-theme {
-        background-color: #ff4c4c;
-        color: white;
-    }
-
-    body.green-theme {
-        background-color: #28a745;
-        color: white;
-    }
-
-    body.grey-theme {
-        background-color: #aaa;
-        color: white;
+        font-family: 'Arial', sans-serif;
+        overflow: auto; /* Ensures scrolling works */
+        height: 100%; /* Fix for scroll issue */
+        margin: 0; /* Removes any default margin */
+        position: relative; /* To position snowflakes correctly */
     }
 
     canvas {
-        border: 1px solid #000;
-        background-color: white;
+        border: 3px solid #fff;
+        background: url('https://i.imgur.com/dQF6XUd.png') center/cover no-repeat;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        margin: 20px auto;
+        display: block;
+        z-index: 2;
     }
 
     #game-over {
-        font-size: 2em;
-        color: red;
+        font-size: 2.5em;
+        color: #ff0000;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
         text-align: center;
         display: none;
     }
@@ -57,106 +43,122 @@ permalink: /snake/
     .button-container button {
         padding: 10px 20px;
         margin: 5px;
-        background-color: #007acc;
+        background-color: #007bff;
         color: white;
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
     }
 
     .button-container button:hover {
-        background-color: #005fa3;
+        background-color: #0056b3;
     }
+
+    .snowflake {
+        position: absolute;
+        top: -10px;
+        font-size: 1.5em;
+        color: white;
+        animation: fall linear infinite;
+        z-index: 1;
+    }
+
+    @keyframes fall {
+        0% {
+            opacity: 1;
+            transform: translateY(0) rotate(0deg);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(100vh) rotate(360deg);
+        }
+    }
+
+    /* Snowy background for the Snake Game area */
+    .game-container {
+        background: url('https://img-new.cgtrader.com/items/4249139/adc2375500/large/4k-seamless-snow-square-material-04-3d-model-adc2375500.jpg') center/cover no-repeat;
+        padding: 20px;
+        margin: 0 auto;
+        width: fit-content;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    }
+
 </style>
 
-<h1 id="game-over">Game Over!</h1>
+<h1 id="game-over">Game Over! Merry Christmas!</h1>
 
-<canvas id="gameCanvas" width="400" height="400"></canvas>
+<!-- Container for the Snake Game -->
+<div class="game-container">
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
 
-<!-- Buttons for controlling the game -->
-<div class="button-container">
-    <button id="slow-btn">Slow Mode</button>
-    <button id="fast-btn">Fast Mode</button>
-    <button id="wall-btn">Wall On/Off</button>
-    <button id="theme-btn">Switch Theme</button>
+    <div class="button-container">
+        <button id="slow-btn">Slow Mode</button>
+        <button id="fast-btn">Fast Mode</button>
+        <button id="wall-btn">Wall On/Off</button>
+        <button id="theme-btn">Switch Theme</button>
+    </div>
 </div>
 
 <script>
     const canvas = document.getElementById("gameCanvas");
     const ctx = canvas.getContext("2d");
-
-    // Unit size of the grid
     const box = 20;
-
-    // Create the snake
-    let snake = [];
-    snake[0] = { x: 9 * box, y: 10 * box };
-
-    // Create the food
+    let snake = [{ x: 9 * box, y: 10 * box }];
     let food = {
         x: Math.floor(Math.random() * 19 + 1) * box,
         y: Math.floor(Math.random() * 19 + 1) * box
     };
-
-    // Initial snake direction
     let direction;
-
-    // Score
     let score = 0;
-
-    // Speed variables
     let speed = 100;
     let wallOn = true;
 
-    // Control the snake with keyboard
     document.addEventListener("keydown", changeDirection);
 
     function changeDirection(event) {
-        if (event.keyCode == 37 && direction != "RIGHT") {
-            direction = "LEFT";
-        } else if (event.keyCode == 38 && direction != "DOWN") {
-            direction = "UP";
-        } else if (event.keyCode == 39 && direction != "LEFT") {
-            direction = "RIGHT";
-        } else if (event.keyCode == 40 && direction != "UP") {
-            direction = "DOWN";
-        }
+        if (event.keyCode == 37 && direction != "RIGHT") direction = "LEFT";
+        else if (event.keyCode == 38 && direction != "DOWN") direction = "UP";
+        else if (event.keyCode == 39 && direction != "LEFT") direction = "RIGHT";
+        else if (event.keyCode == 40 && direction != "UP") direction = "DOWN";
     }
+
+    // Prevent page scrolling when arrow keys are pressed
+    document.addEventListener("keydown", function(event) {
+        if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
+            event.preventDefault(); // Prevent the default action (scrolling)
+        }
+    });
 
     function collision(head, array) {
-        for (let i = 0; i < array.length; i++) {
-            if (head.x == array[i].x && head.y == array[i].y) {
-                return true;
-            }
-        }
-        return false;
+        return array.some(segment => head.x === segment.x && head.y === segment.y);
     }
 
-    // Draw everything on the canvas
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Draw snake with emoji
         for (let i = 0; i < snake.length; i++) {
-            ctx.font = "20px Arial";  // Set font size to match the grid
-            ctx.fillText("🐍", snake[i].x, snake[i].y + box);  // Adjust the y-offset slightly for better alignment
+            ctx.fillStyle = i === 0 ? "#ff0000" : "#008000";
+            ctx.fillRect(snake[i].x, snake[i].y, box, box);
+            ctx.font = "20px Arial";
+            if (i === 0) {
+                ctx.fillText("🎅", snake[i].x, snake[i].y + box);
+            }
         }
 
-        // Draw food
-        ctx.fillStyle = "red";
-        ctx.fillRect(food.x, food.y, box, box);
+        // Christmas Cookie Food
+        const cookieImg = new Image();
+        cookieImg.src = "https://github.com/user-attachments/assets/c8d042e2-7861-4895-8c36-9882c530192d";
+        ctx.drawImage(cookieImg, food.x, food.y, box, box);
 
-        // Old head position
         let snakeX = snake[0].x;
         let snakeY = snake[0].y;
 
-        // Move the snake
         if (direction == "LEFT") snakeX -= box;
         if (direction == "UP") snakeY -= box;
         if (direction == "RIGHT") snakeX += box;
         if (direction == "DOWN") snakeY += box;
 
-        // Snake eats the food
         if (snakeX == food.x && snakeY == food.y) {
             score++;
             food = {
@@ -167,77 +169,63 @@ permalink: /snake/
             snake.pop();
         }
 
-        // New head
-        let newHead = {
-            x: snakeX,
-            y: snakeY
-        };
+        let newHead = { x: snakeX, y: snakeY };
 
-        // Game over conditions
-        if (wallOn) {
-            if (snakeX < 0 || snakeY < 0 || snakeX >= canvas.width || snakeY >= canvas.height || collision(newHead, snake)) {
-                document.getElementById("game-over").style.display = "block";
-                clearInterval(game);
-            }
+        if (wallOn && (snakeX < 0 || snakeY < 0 || snakeX >= canvas.width || snakeY >= canvas.height || collision(newHead, snake))) {
+            document.getElementById("game-over").style.display = "block";
+            clearInterval(game);
         } else {
-            // Wrap the snake around the canvas
-            if (snakeX < 0) {
-                snakeX = canvas.width - box;
+            if (!wallOn) {
+                if (snakeX < 0) snakeX = canvas.width - box;
+                if (snakeX >= canvas.width) snakeX = 0;
+                if (snakeY < 0) snakeY = canvas.height - box;
+                if (snakeY >= canvas.height) snakeY = 0;
             }
-            if (snakeX >= canvas.width) {
-                snakeX = 0;
-            }
-            if (snakeY < 0) {
-                snakeY = canvas.height - box;
-            }
-            if (snakeY >= canvas.height) {
-                snakeY = 0;
-            }
+
+            snake.unshift(newHead);
         }
 
-        snake.unshift(newHead);
-
-        // Score display
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "white";
         ctx.font = "20px Arial";
         ctx.fillText("Score: " + score, 10, 30);
     }
 
-    // Control speed of the game
     let game = setInterval(draw, speed);
 
-    // Button functionality
     document.getElementById("slow-btn").addEventListener("click", function() {
         clearInterval(game);
-        speed = 200;  // Slow mode speed
+        speed = 200;
         game = setInterval(draw, speed);
     });
 
     document.getElementById("fast-btn").addEventListener("click", function() {
         clearInterval(game);
-        speed = 50;  // Fast mode speed
+        speed = 50;
         game = setInterval(draw, speed);
     });
 
     document.getElementById("wall-btn").addEventListener("click", function() {
-        wallOn = !wallOn;  // Toggle wall on/off
+        wallOn = !wallOn;
     });
 
-    // Theme switching functionality
-    const themes = ['light-theme', 'dark-theme', 'blue-theme', 'red-theme', 'green-theme', 'grey-theme'];
+    const themes = ['#003366', '#ff0000', '#00ff00', '#ffcc00'];
     let currentTheme = 0;
-
     document.getElementById("theme-btn").addEventListener("click", function() {
-        // Remove the current theme class
-        document.body.classList.remove(themes[currentTheme]);
-        
-        // Move to the next theme
-        currentTheme = (currentTheme + 1) % themes.length;
-        
-        // Apply the new theme
-        document.body.classList.add(themes[currentTheme]);
+        document.body.style.backgroundColor = themes[++currentTheme % themes.length];
     });
+
+    function createSnowflakes() {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.style.left = Math.random() * window.innerWidth + 'px';
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+        snowflake.textContent = '❄';
+        document.body.appendChild(snowflake);
+
+        setTimeout(() => snowflake.remove(), 5000);
+    }
+
+    setInterval(createSnowflakes, 100);
 </script>
 
-
-
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5OP7itTh52BMfZS1DJrdlv?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
