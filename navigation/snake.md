@@ -4,8 +4,6 @@ title: Snake
 permalink: /snake/
 ---
 
-{% include nav/home.html %}
-
 <style>
     /* Christmas Theme */
     body {
@@ -138,17 +136,17 @@ permalink: /snake/
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         for (let i = 0; i < snake.length; i++) {
-            ctx.fillStyle = i === 0 ? "#ff0000" : "#008000";
+            ctx.fillStyle = i === 0 ? "#FFFFFF" : "#000000";
             ctx.fillRect(snake[i].x, snake[i].y, box, box);
             ctx.font = "20px Arial";
             if (i === 0) {
-                ctx.fillText("🎅", snake[i].x, snake[i].y + box);
+                ctx.fillText("⛷️", snake[i].x, snake[i].y + box);
             }
         }
 
         // Christmas Cookie Food
         const cookieImg = new Image();
-        cookieImg.src = "https://github.com/user-attachments/assets/c8d042e2-7861-4895-8c36-9882c530192d";
+        cookieImg.src = "data:image/jpeg;base64,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";
         ctx.drawImage(cookieImg, food.x, food.y, box, box);
 
         let snakeX = snake[0].x;
