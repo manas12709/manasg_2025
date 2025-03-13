@@ -4,6 +4,7 @@ search_exclude: true
 show_reading_time: false
 permalink: /manasmcqblog
 title: Manas's MCQ Blog
+comments: true
 categories: [Manas Final Retrospective]
 ---
 
